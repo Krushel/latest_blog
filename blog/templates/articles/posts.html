@@ -1,0 +1,36 @@
+{% extends 'articles/index.html' %}
+{% block title %}
+
+{% endblock %}
+<title>Posts</title>
+{% block body %}
+        <main class="main">
+            <ul id="main-list" class="main-list">
+                {%if object_list%}
+                {% if request.user.is_authenticated %}
+                {% for post in object_list %}
+                <li class="main-list__item"><a class="triangle" href="{% url 'front:upvote' pk=post.id %}">▲</a>
+                    <a href="{% url 'front:deletePost' pk=post.id %}">❌</a>
+                    <a class="title" href="{{post.link}}">{{post.title}}</a>,
+                    ({{post.owner}}) <span>{{post.upvotesNum}}</span> upvotes<br>
+                    <a class="comment" href="{% url 'front:comments' pk=post.id %}">{{post.commentsNum}} comments</a></li>
+                {% endfor %}
+                {% else %}
+                {% for post in object_list %}
+                <li class="main-list__item">
+                    <a class="title" href="{{post.link}}">{{post.title}}</a>,
+                    ({{post.owner}}) <span>{{post.upvotesNum}}</span> upvotes<br>
+                    <p class="comment">{{post.commentsNum}} comments</p></li>
+                {% endfor %}
+                {% endif %}
+                {% else %}
+                    No posts(
+                {% endif %}
+                </ul>
+        </main>
+    </div>
+
+
+</body>
+
+{% endblock %}

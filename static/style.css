@@ -1,0 +1,129 @@
+/* @import "null.css"; */
+
+html, body {
+    height: 100%;
+    overflow: scroll;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    height: 100%;
+    padding: 0.7% 8%;
+}
+.header {
+    display: flex;
+    align-items: center;
+    background: rgb(68, 223, 48);
+    height: 4%
+}
+
+.header__logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 30%;
+}
+
+.header__logo-link a{
+    border: 1.9px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+.header__logo-text {
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-left: 10%;
+}
+.header__action-container {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;   
+}
+.header__action-create a {
+    color: #000;
+    font-weight: 500;
+}
+.header__action-login {
+    padding-right: 5%;
+}
+
+.header__action-login a {
+    color: #000;
+    font-weight: 500;
+}
+
+.main-list__item {
+    padding: 1%;
+    letter-spacing: 0.03em;
+    font-size: 15px;
+}
+form {
+    padding-top: 20%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.form__item {
+    margin-top: 1%;
+    width: 20%;
+    height: 1.7em;
+    font-size: 16px;
+    color: rgb(43, 43, 43);
+}
+
+.form__item:focus {
+    opacity: 0.5;
+}
+
+.btn {
+    width: 12%;
+    height: 2.3em;
+    background: rgb(60, 196, 42);
+    border-radius: 3px;
+    font-size: 16px;
+    color: #fff;
+
+}
+
+.btn:hover {
+    background-color: darkolivegreen;
+}
+
+textarea {
+    border: 1px solid #000;
+    height: 7em;
+    width: 30em;
+}
+
+.main-comments {
+    height: 100%;
+    margin: 1.5em 1.5em;
+}
+
+.comment-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-comments {
+}
+
+.triangle {
+    text-decoration: none;
+    color: grey;
+}
+.title {
+    text-decoration: none;
+    color: #000;
+}
+
+.comment {
+    text-decoration: none;
+    color: grey;
+}
+span {
+    color: red;
+}

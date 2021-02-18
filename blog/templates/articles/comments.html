@@ -1,0 +1,32 @@
+{% extends 'articles/index.html' %}
+{% block title %}
+<title>Comments</title>
+{% endblock %}
+
+{% block body %}
+        <main class="main-comments">
+            <div>
+                Title:{{post.title}}<br>
+                Link:{{post.link}}<br>
+                Owner:{{post.owner}}<br>
+                Time:{{post.created}}<br><br><br>
+            </div>
+            <div class="comment-section">
+                {% for comment in comments %}
+                <strong id="text">{{ comment.body }}</strong>
+                <p id="author">{{ comment.owner }}</p>
+                <a href="{% url 'front:deleteComment' pk=comment.id %}">❌</a>
+                {% endfor %}
+                <form action="" method="POST">
+
+                    {% csrf_token %}
+                    <textarea name="comment" id="1" cols="50" rows="10"></textarea>
+                    <button a class="btn btn-comments" type="submit">Add comment</button>
+
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+
+{% endblock %}
